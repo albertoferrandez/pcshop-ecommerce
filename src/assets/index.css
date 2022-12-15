@@ -122,24 +122,33 @@ nav button {
 }
 
 @media (max-width: 1172px) {
- nav div{
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  height: 100vh;
-  background-color: #fff;
- }
+  nav div {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 100vh;
+    background-color: #fff;
+  }
 
- nav div a{
-  display: block;
- }
+  nav div a {
+    display: block;
+  }
+
   nav button {
     display: block;
   }
 
-  nav{
+  nav {
     margin: 0;
+  }
+
+  .title-container {
+    text-align: center;
+  }
+
+  .side-cart {
+    width: 30vw;
   }
 }
 
@@ -171,7 +180,7 @@ nav main {
 .products-cont {
   width: 75vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 50px;
 }
 
@@ -180,8 +189,9 @@ nav main {
     linear-gradient(90deg, rgba(36, 249, 243, 1) 0%, rgba(29, 214, 253, 1) 50%, rgba(241, 69, 252, 1) 100%);
   border: 2px solid transparent;
   border-radius: 10px;
-  padding: 5px 20px;
+  padding: 25px 15px;
   width: 250px;
+  margin: 0 auto;
 }
 
 .card-img img {
@@ -245,16 +255,23 @@ footer.section {
 }
 
 .side-cart-product {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 15px;
+  height: 15vh;
 }
 
-.side-cart-product h4 {
-  flex: 2;
+.cart-product-img img {
+  object-fit: cover;
+  float: left;
+  width: 50%;
 }
 
-.side-cart-product img {
-  width: 100px;
-  height: 60px;
+.cart-product-details{
+  width: 50%;
+  float: left;
+}
+
+.mv-menu-button {
+  position: absolute;
+  right: 10vw;
+  z-index: 1;
+  top: 25vh;
 }

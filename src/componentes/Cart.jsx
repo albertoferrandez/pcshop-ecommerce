@@ -10,16 +10,18 @@ const Cart = () => {
   return (
     <div className='side-cart'>
       <h3>Mi carrito</h3>
-      <hr/>
+      <hr />
       {cart.length === 0 ?
-        <p>AÑADE UN PRODUCTO AL CARRO</p> : 
+        <p>AÑADE UN PRODUCTO AL CARRO</p> :
         cart.map(product => (
           <div className='side-cart-product' key={product.id}>
-            <div>
-              <img src={product.imagen} alt='producto'/>
+            <div className='cart-product-img'>
+              <img src={product.imagen} alt='producto' />
             </div>
-            <h4>{product.productName}</h4>
-            <p>{product.cantidad}</p>
+            <div className='cart-product-details'>
+              <h4>{product.productName}</h4>
+              <p>Cant: {product.cantidad} - Precio: {product.price} €</p>
+            </div>
           </div>
         ))
       }

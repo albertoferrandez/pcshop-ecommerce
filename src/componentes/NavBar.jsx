@@ -2,9 +2,10 @@ import { NavLink  } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const NavBar = () => {
+
   return (
     <nav>
-      <div style={{opacity:1}}>
+      <div>
         <NavLink to={`/`}>INICIO</NavLink>
         <NavLink to={`componentes/procesadores`}>PROCESADOR</NavLink>
         <NavLink to={`componentes/placasbase`}>PLACAS BASE</NavLink>
@@ -13,7 +14,7 @@ const NavBar = () => {
         <NavLink to={`componentes/tarjetas graficas`}>TARJETAS GRÁFICAS</NavLink>
         <NavLink to={`componentes/torres`}>TORRES/CAJAS</NavLink>
       </div>
-      <button>
+      <button className="mv-menu-button" onClick={() => openSidebar()}>
           <AiOutlineMenu size={24}/>
       </button>
     </nav>
