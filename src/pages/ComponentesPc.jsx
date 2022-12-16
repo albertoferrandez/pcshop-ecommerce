@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import supabase from "../bd/conecttobd";
 import { useDispatch } from 'react-redux';
 import { addtoCart } from '../slice/cartSlice';
-
+import { MdAddShoppingCart } from "react-icons/md";
 
 const ComponentesPc = () => {
 
@@ -15,18 +15,19 @@ const ComponentesPc = () => {
   useEffect(() => {
     const getProducts = async () => {
       const { data, error } = await supabase
-        .from(`${productID.compID}`)
+        .from('products')
         .select()
+        .eq('component', `${productID.compID}`)
       if (error) {
         console.log(error)
       }
       if (data) {
         setProducts(data)
+        console.log(data)
       }
     }
     getProducts()
   }, [productID])
-
 
   return (
     <div>
@@ -55,7 +56,7 @@ const ComponentesPc = () => {
                     })
                     )
                   }>
-                  Añadir al carro
+                  <MdAddShoppingCart/>
                 </button>
               </div>
             </div>

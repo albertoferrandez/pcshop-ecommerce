@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const getProducts = async () => {
       const { data, error } = await supabase
-        .from('placasbase')
+        .from('products')
         .select()
       if (error) {
         console.log(error)

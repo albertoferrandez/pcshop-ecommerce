@@ -4,7 +4,6 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState: {
     cart: [],
-    cant: 0,
     cantTotal: 0,
     precioTotal: 0
   },
@@ -20,11 +19,19 @@ export const cartSlice = createSlice({
         state.cart.push(tempProduct);
       }
       state.cantTotal++;
+    },
+
+    deletefromCart(state, action) {
+      const deleteItem = state.cart.filter(
+        (item) => item.id !== action.payload.id
+      )
+      state.cart = deleteItem;
+      state.cantTotal - 1;
     }
   }
 },
 )
 
-export const { addtoCart } = cartSlice.actions
+export const { addtoCart, deletefromCart } = cartSlice.actions
 
 export default cartSlice.reducer

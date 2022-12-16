@@ -9,6 +9,10 @@
   transition: 0.5s ease;
 }
 
+h4{
+  color: #242424;
+}
+
 button {
   all: unset;
   cursor: pointer;
@@ -98,7 +102,7 @@ input {
 }
 
 nav {
-  margin: 3rem 0;
+  margin: 2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,12 +121,20 @@ nav a {
   background-size: 500% 100%;
 }
 
-nav button {
+.mv-menu-button {
   display: none;
+  position: absolute;
+  right: 10vw;
+  z-index: 1;
+  top: 20vh;
 }
 
 @media (max-width: 1172px) {
-  nav div {
+  nav.lg-screen{
+    display: none;
+  }
+
+  nav.sidebar {
     position: fixed;
     left: 0;
     top: 0;
@@ -131,11 +143,11 @@ nav button {
     background-color: #fff;
   }
 
-  nav div a {
+  .sidebar a {
     display: block;
   }
 
-  nav button {
+  .mv-menu-button {
     display: block;
   }
 
@@ -149,6 +161,10 @@ nav button {
 
   .side-cart {
     width: 30vw;
+  }
+
+  main{
+    margin: 5vh 0;
   }
 }
 
@@ -178,24 +194,19 @@ nav main {
 
 
 .products-cont {
-  width: 75vw;
+  width: 65vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 50px;
 }
 
 .card-product {
-  background: linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(90deg, rgba(36, 249, 243, 1) 0%, rgba(29, 214, 253, 1) 50%, rgba(241, 69, 252, 1) 100%);
-  border: 2px solid transparent;
-  border-radius: 10px;
-  padding: 25px 15px;
   width: 250px;
   margin: 0 auto;
 }
 
 .card-img img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: 180px;
 }
@@ -208,7 +219,7 @@ nav main {
 .precio-button {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
+  padding: 0 20px;
 }
 
 .precio-button button {
@@ -238,7 +249,7 @@ footer.section {
 
 .side-cart {
   height: 100vh;
-  width: 20vw;
+  width: 30vw;
   position: absolute;
   right: 0;
   top: 0;
@@ -267,11 +278,4 @@ footer.section {
 .cart-product-details{
   width: 50%;
   float: left;
-}
-
-.mv-menu-button {
-  position: absolute;
-  right: 10vw;
-  z-index: 1;
-  top: 25vh;
 }

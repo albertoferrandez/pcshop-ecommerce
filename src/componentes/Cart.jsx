@@ -1,11 +1,12 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { deletefromCart } from '../slice/cartSlice'
 
 const Cart = () => {
 
   const cart = useSelector(state => state.cart)
   const cant = useSelector(state => state.cantTotal)
+  const dispatch = useDispatch();
 
   return (
     <div className='side-cart'>
@@ -21,6 +22,7 @@ const Cart = () => {
             <div className='cart-product-details'>
               <h4>{product.productName}</h4>
               <p>Cant: {product.cantidad} - Precio: {product.price} €</p>
+              <button onClick={() => dispatch(deletefromCart(product))}>x</button>
             </div>
           </div>
         ))
