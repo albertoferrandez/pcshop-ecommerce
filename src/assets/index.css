@@ -13,7 +13,7 @@ h4{
   color: #242424;
 }
 
-button {
+button, a {
   all: unset;
   cursor: pointer;
 }

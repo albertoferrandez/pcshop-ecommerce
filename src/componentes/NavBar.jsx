@@ -12,7 +12,7 @@ const NavBar = () => {
       <nav className="lg-screen">
         <div>
           <NavLink to={`/`}>INICIO</NavLink>
-          <NavLink to={`componentes/Procesadores`}>PROCESADORES</NavLink>
+          <NavLink to={`componentes/Procesadores`} >PROCESADORES</NavLink>
           <NavLink to={`componentes/PlacasBase`}>PLACAS BASE</NavLink>
           <NavLink to={`componentes/Ram`}>RAM</NavLink>
           <NavLink to={`componentes/fuentes de alimentación`}>FUENTES DE ALIMENTACIÓN</NavLink>

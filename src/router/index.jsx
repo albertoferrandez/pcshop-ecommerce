@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import Error404 from "../pages/Error404";
 import ComponentesPc from '../pages/ComponentesPc'
 import Layout from "../layout/Layout";
+import ProductDetails from "../pages/ProductDetails";
 
 export const router = createBrowserRouter([
   {
@@ -15,8 +16,12 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "componentes/:compID/",
+        path: "componentes/:compID",
         element: <ComponentesPc />,
+      },
+      {
+        path: "componentes/:compID/:id",
+        element: <ProductDetails />,
       }
     ]
   },

@@ -22,10 +22,8 @@ const Header = () => {
       }
     }, [])
     
-
-    const cart = useSelector(state => state.cart)
     const cant = useSelector(state => state.cantTotal)
-
+    console.log(cant)
 
     return (
         <header className="section">
