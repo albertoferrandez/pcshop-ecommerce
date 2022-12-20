@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import Cart from "./Cart";
-
+import FormSearch from "./FormSearch";
 
 const Header = () => {
 
@@ -29,16 +29,7 @@ const Header = () => {
         <header className="section">
             <div className="container">
                 <h1 className='main-title'>pcSHOP</h1>
-
-                <div className='search-element'>
-                    <form>
-                        <input type="text" />
-                        <button className='button-form'>
-                            <AiOutlineSearch size={15} />
-                        </button>
-                    </form>
-                </div>
-
+                <FormSearch/>
                 <div className="carrito">
                     <span>{cant}</span>
                     <button onClick={() => setOpen(!isOpen)}>

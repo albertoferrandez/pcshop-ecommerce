@@ -38,8 +38,8 @@ const ComponentesPc = () => {
       {products && (
         <article className="products-cont">
           {products.map(p => (
-            <div className="card-product">
-              <Link to={`/componentes/${productID.compID}/${p.id}`} key={p.id} relative="path">
+            <div className="card-product" key={p.id}>
+              <Link to={`/componentes/${productID.compID}/${p.id}`}  state={p} relative="path">
                 <div className="card-img">
                   <img src={p.imagen} alt="product-img" />
                 </div>

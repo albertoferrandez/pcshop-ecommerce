@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import supabase from "../bd/conecttobd";
-
+import FormSearch from "../componentes/FormSearch";
 
 const Home = () => {
 
@@ -19,7 +18,8 @@ const Home = () => {
         setProducts(data)
       }
     }
-    getProducts()
+    getProducts();
+    <FormSearch data={products}/>
   }, [])
 
   return (
