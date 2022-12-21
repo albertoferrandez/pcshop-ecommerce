@@ -23,8 +23,6 @@ const FormSearch = () => {
         getProducts();
     }, [])
 
-    console.log(products.filter(prod => prod.productName.toLowerCase().includes(search)))
-
     return (
         <div className="search-bar">
             <div className="search-field">

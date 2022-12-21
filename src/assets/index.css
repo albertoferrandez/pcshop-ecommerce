@@ -19,7 +19,7 @@ a {
   cursor: pointer;
 }
 
-body {
+body, html {
   min-height: 100vh;
 }
 
@@ -102,7 +102,7 @@ form>input:focus {
   background-color: #fff;
 }
 
-.list-search ul li{
+.list-search ul li {
   list-style: none;
   padding: 5px 10px;
   color: #242424;
@@ -222,9 +222,16 @@ nav main {
 .card-product {
   width: 250px;
   margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.card-product:hover {
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.75);
 }
 
 .card-img img {
+  aspect-ratio: 16/9;
   object-fit: contain;
   width: 100%;
   height: 180px;
@@ -235,21 +242,28 @@ nav main {
   text-align: center;
 }
 
-.precio-button {
+.precio {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 800;
 }
 
-.precio-button button {
+.cart-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-button {
   padding: 5px 10px;
   border: none;
   cursor: pointer;
+  display: inline-block;
 }
 
-.precio-button span {
-  font-size: 1rem;
-  font-weight: 800;
+.cart-button svg {
+  vertical-align: middle;
 }
 
 .carrito span {
@@ -263,7 +277,7 @@ nav main {
 
 footer.section {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 10rem;
 }
 
 .side-cart {
@@ -297,4 +311,22 @@ footer.section {
 .cart-product-details {
   width: 50%;
   float: left;
+}
+
+.detail-container {
+  width: 65vw;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: relative;
+}
+
+.detail-container div>img {
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  width: 100%;
+  height: 350px;
+}
+
+.detail-container h1 {
+  text-align: center;
 }

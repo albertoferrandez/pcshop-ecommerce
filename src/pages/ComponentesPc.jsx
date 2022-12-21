@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom'
 import supabase from "../bd/conecttobd";
-import { useDispatch } from 'react-redux';
-import { addtoCart } from '../slice/cartSlice';
-import { MdAddShoppingCart } from "react-icons/md";
 
 
 const ComponentesPc = () => {
 
   let productID = useParams();
-  const dispatch = useDispatch();
 
   const [products, setProducts] = useState([]);
 
@@ -46,20 +42,8 @@ const ComponentesPc = () => {
                 <div >
                   <h4>{p.productName}</h4>
                 </div>
-                <div className='precio-button'>
+                <div className='precio'>
                   <span>{p.price} €</span>
-                  <button className='active'
-                    onClick={() =>
-                      dispatch(addtoCart({
-                        id: p.id,
-                        imagen: p.imagen,
-                        productName: p.productName,
-                        price: p.price,
-                      })
-                      )
-                    }>
-                    <MdAddShoppingCart />
-                  </button>
                 </div>
               </Link>
             </div>

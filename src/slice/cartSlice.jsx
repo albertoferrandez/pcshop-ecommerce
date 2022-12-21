@@ -18,14 +18,17 @@ export const cartSlice = createSlice({
         const tempProduct = { ...action.payload, cantidad: 1 }
         state.cart.push(tempProduct);
       }
-      state.cantTotal++;
+      
+      state.cantTotal = state.cart.reduce((acumulador, actual) => acumulador + actual.cantidad, 0);
+      
     },
 
     deletefromCart(state, action) {
+      console.log(action.payload.id)
       const deleteItem = state.cart.filter(
         (item) => item.id !== action.payload.id
       )
-      state.cart = deleteItem;      
+      state.cart = deleteItem;
     }
   }
 },

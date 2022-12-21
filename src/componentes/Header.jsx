@@ -23,7 +23,6 @@ const Header = () => {
     }, [])
     
     const cant = useSelector(state => state.cantTotal)
-    console.log(cant)
 
     return (
         <header className="section">

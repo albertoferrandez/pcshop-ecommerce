@@ -19,7 +19,6 @@ const Home = () => {
       }
     }
     getProducts();
-    <FormSearch data={products}/>
   }, [])
 
   return (
