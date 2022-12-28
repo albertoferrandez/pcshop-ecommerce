@@ -29,6 +29,8 @@ export const cartSlice = createSlice({
         (item) => item.id !== action.payload.id
       )
       state.cart = deleteItem;
+      state.cantTotal = state.cart.reduce((acumulador, actual) => acumulador + actual.cantidad, 0);
+
     }
   }
 },

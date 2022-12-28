@@ -23,7 +23,7 @@ const ProductDetails = () => {
             {location.state.capacidad && <p>Capacidad: {location.state.capacidad}</p>}
             {location.state.chipset && <p>Chipset: {location.state.chipset}</p>}
           </div>
-          <h1>{location.state.price}</h1>
+          <h1>{location.state.price} €</h1>
           <div className='cart-button-container'>
             <button className='cart-button active'
               onClick={() =>

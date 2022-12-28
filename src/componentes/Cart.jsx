@@ -28,7 +28,7 @@ const Cart = () => {
         ))
       }
 
-      <p>Total Productos: {cant}</p>
+      <p className='total-products'>Total Productos: {cant}</p>
     </div>
   )
 }
