@@ -7,23 +7,25 @@ const ProductDetails = () => {
 
   const dispatch = useDispatch();
 
-  const productId = useParams()
   let location = useLocation();
 
   console.log(location.state)
   return (
     <section className="container">
       <div className="detail-container">
-        <div>
+        <div className="detail-img">
           <img src={location.state.imagen} alt="image-product" />
         </div>
         <div>
           <h1>{location.state.productName}</h1>
-          <div>
-            {location.state.capacidad && <p>Capacidad: {location.state.capacidad}</p>}
-            {location.state.chipset && <p>Chipset: {location.state.chipset}</p>}
+          <div className="detail-description">
+            <h3>CARACTERÍSTICAS :</h3>
+            <ul className="detail-list">
+              {location.state.capacidad && <li>Capacidad: {location.state.capacidad}</li>}
+              {location.state.chipset && <li>Chipset: {location.state.chipset}</li>}
+            </ul>
           </div>
-          <h1>{location.state.price} €</h1>
+          <h1 className="detail-price">{location.state.price} €</h1>
           <div className='cart-button-container'>
             <button className='cart-button active'
               onClick={() =>
@@ -35,7 +37,7 @@ const ProductDetails = () => {
                 })
                 )
               }>
-              <span>AÑADIR AL CARRO</span> <MdAddShoppingCart /> 
+              <span>AÑADIR AL CARRO</span> <MdAddShoppingCart />
             </button>
           </div>
         </div>

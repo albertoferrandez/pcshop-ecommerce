@@ -19,7 +19,8 @@ a {
   cursor: pointer;
 }
 
-body, html {
+body,
+html {
   min-height: 100vh;
 }
 
@@ -42,7 +43,12 @@ body, html {
 
 .main-title {
   font-size: 4rem;
-  background: linear-gradient(90deg, rgba(36, 249, 243, 1) 0%, rgba(29, 214, 253, 1) 50%, rgba(241, 69, 252, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(36, 249, 243, 1) 0%,
+    rgba(29, 214, 253, 1) 50%,
+    rgba(241, 69, 252, 1) 100%
+  );
   color: transparent;
   background-clip: text;
   background-position: 100% 0;
@@ -69,7 +75,6 @@ body, html {
   header {
     min-height: 18vh;
   }
-
 }
 
 .search-bar {
@@ -80,18 +85,23 @@ body, html {
 .search-field {
   width: 23vw;
   border-radius: 5px;
-  background-image: linear-gradient(90deg, rgba(36, 249, 243, 1) 0%, rgba(29, 214, 253, 1) 50%, rgba(241, 69, 252, 1) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(36, 249, 243, 1) 0%,
+    rgba(29, 214, 253, 1) 50%,
+    rgba(241, 69, 252, 1) 100%
+  );
 }
 
-.search-field>form {
+.search-field > form {
   display: flex;
 }
 
-form>input {
+form > input {
   width: 100%;
 }
 
-form>input:focus {
+form > input:focus {
   outline: none;
 }
 
@@ -120,6 +130,12 @@ input {
   cursor: pointer;
 }
 
+@media (max-width: 850px) {
+  .search-bar {
+    display: none;
+  }
+}
+
 nav {
   margin: 2rem 0;
   display: flex;
@@ -133,7 +149,12 @@ nav a {
   font-size: 1rem;
   font-weight: 700;
   padding: 0.7rem 1.4rem;
-  background: linear-gradient(90deg, rgba(36, 249, 243, 1) 0%, rgba(29, 214, 253, 1) 50%, rgba(241, 69, 252, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(36, 249, 243, 1) 0%,
+    rgba(29, 214, 253, 1) 50%,
+    rgba(241, 69, 252, 1) 100%
+  );
   color: transparent;
   background-clip: text;
   background-position: 100% 0;
@@ -188,7 +209,12 @@ nav a {
 }
 
 .active {
-  background: linear-gradient(90deg, rgba(36, 249, 243, 1) 0%, rgba(29, 214, 253, 1) 50%, rgba(241, 69, 252, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(36, 249, 243, 1) 0%,
+    rgba(29, 214, 253, 1) 50%,
+    rgba(241, 69, 252, 1) 100%
+  );
   color: #242424;
   border-radius: 5px;
 }
@@ -210,7 +236,6 @@ main.container {
 nav main {
   min-height: 70vh;
 }
-
 
 .products-cont {
   width: 65vw;
@@ -314,18 +339,18 @@ footer.section {
   float: left;
 }
 
-.total-products{
+.total-products {
   margin-top: 5rem;
 }
 
 .detail-container {
-  width: 65vw;
+  width: 75vw;
   display: grid;
   grid-template-columns: 50% 50%;
-  position: relative;
+  gap: 20px;
 }
 
-.detail-container div>img {
+.detail-container div > img {
   aspect-ratio: 16/9;
   object-fit: contain;
   width: 100%;
@@ -334,10 +359,28 @@ footer.section {
 
 .detail-container h1 {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 25px;
 }
 
-.detail-container h1>div{
-  margin-bottom: 1rem;
+.detail-description{
+  margin-bottom: 25px;
+}
 
+.detail-price{
+  font-size: 40px;
+}
+
+.detail-list{
+  list-style-type: none;
+  margin-left: 25px;
+  margin-top: 15px;
+  color: rgb(224, 182, 220);
+}
+
+@media (max-width: 850px) {
+  .detail-container {
+    width: 65vw;
+    display: grid;
+    grid-template-columns: 100%;
+  }
 }
