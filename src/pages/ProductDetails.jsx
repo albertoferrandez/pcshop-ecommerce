@@ -1,4 +1,4 @@
-import { useParams, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { MdAddShoppingCart } from "react-icons/md";
 import { addtoCart } from '../slice/cartSlice';

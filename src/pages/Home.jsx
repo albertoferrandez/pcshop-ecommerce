@@ -1,24 +1,17 @@
 import { useState, useEffect } from "react";
-import supabase from "../bd/conecttobd";
-import FormSearch from "../componentes/FormSearch";
+import { getAllProducts } from "../services/getAllProducts";
 
 const Home = () => {
 
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([])
 
+  const getItems = async() => {
+    const AllProducts = await getAllProducts()
+    setProducts(AllProducts)
+  }
+  
   useEffect(() => {
-    const getProducts = async () => {
-      const { data, error } = await supabase
-        .from('products')
-        .select()
-      if (error) {
-        console.log(error)
-      }
-      if (data) {
-        setProducts(data)
-      }
-    }
-    getProducts();
+    getItems()
   }, [])
 
   return (
@@ -33,13 +26,13 @@ const Home = () => {
                 <div className="card-img">
                   <img src={p.imagen} alt="product-img"/>
                 </div>
-                <p key={p.id}>
+                <div>
                   <h4>{p.productName}</h4>
-                </p>
+                </div>
               </div>
             ))}
           </article>
-        )}
+            )}
     </div>
   )
 }

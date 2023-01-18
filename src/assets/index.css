@@ -195,10 +195,6 @@ nav a {
     margin: 0;
   }
 
-  .title-container {
-    text-align: center;
-  }
-
   .side-cart {
     width: 30vw;
   }
@@ -220,7 +216,7 @@ nav a {
 }
 
 .title-container {
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
 main {
@@ -364,6 +360,9 @@ footer.section {
 
 .detail-description{
   margin-bottom: 25px;
+  font-size: 12px;
+  color: rgb(143, 138, 142);
+  padding: 0 40px;
 }
 
 .detail-price{
@@ -374,7 +373,7 @@ footer.section {
   list-style-type: none;
   margin-left: 25px;
   margin-top: 15px;
-  color: rgb(224, 182, 220);
+  color: rgb(143, 138, 142);
 }
 
 @media (max-width: 850px) {
