@@ -27,7 +27,6 @@ const NavBar = () => {
         {
           isOpen && <Sidebar />
         }
-        <hr/>
     </>
 
   )

@@ -9,7 +9,6 @@ const ProductDetails = () => {
 
   let location = useLocation();
 
-  console.log(location.state)
   return (
     <section className="container">
       <div className="detail-container">
