@@ -1,32 +1,46 @@
 import { NavLink } from "react-router-dom";
-import { AiOutlineMenu } from "react-icons/ai";
-import Sidebar from "./Sidebar";
+import { BsArrowLeftSquareFill } from "react-icons/bs";
 import { useState } from "react";
+import cpu from "../assets/cpu.svg"
+import caja from "../assets/caja.svg"
+import gpu from "../assets/gpu.svg"
+import home from "../assets/home.svg"
+import placa from "../assets/placa.svg"
+import ram from "../assets/ram.svg"
+import fa from "../assets/fa.svg"
+
 
 const NavBar = () => {
 
-  const [isOpen, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
+
+  const Links = [
+    { title: "INICIO", src: `/`, logo: home },
+    { title: "PROCESADORES", src: `componentes/Procesadores`, logo: cpu },
+    { title: "PLACAS BASE", src: `componentes/Placas Base`, logo: placa },
+    { title: "RAM", src: `componentes/Ram`, logo: ram },
+    { title: "FUENTES DE ALIMENTACIÓN", src: `componentes/fuentes de alimentación`, logo: fa },
+    { title: "TARJETAS GRÁFICAS", src: `componentes/tarjetas graficas`, logo: gpu },
+    { title: "TORRES/CAJAS", src: `componentes/torres`, logo: caja },
+  ]
 
   return (
     <>
-      <nav className="lg-screen">
-        <div>
-          <NavLink to={`/`}>INICIO</NavLink>
-          <NavLink to={`componentes/Procesadores`} >PROCESADORES</NavLink>
-          <NavLink to={`componentes/PlacasBase`}>PLACAS BASE</NavLink>
-          <NavLink to={`componentes/Ram`}>RAM</NavLink>
-          <NavLink to={`componentes/fuentes de alimentación`}>FUENTES DE ALIMENTACIÓN</NavLink>
-          <NavLink to={`componentes/tarjetas graficas`}>TARJETAS GRÁFICAS</NavLink>
-          <NavLink to={`componentes/torres`}>TORRES/CAJAS</NavLink>
-        </div>
-      </nav>
-
-      <button className="mv-menu-button" onClick={() => setOpen(!isOpen)}>
-        <AiOutlineMenu size={24} />
-      </button>
+      <aside className={`${open ? 'w-36 md:w-72' : 'w-16 md:w-20'}  h-screen bg-neutral-800 
+      relative duration-300 p-3 pt-5 md:p-5 md:pt-8`}>
+        <BsArrowLeftSquareFill className={`absolute cursor-pointer -right-3 
+          top-9 w-7 rounded-md ${!open && "rotate-180"} fill-slate-400 w-6 h-6`} onClick={() => setOpen(!open)} />
         {
-          isOpen && <Sidebar />
+          Links.map((link, i) => (
+            <NavLink to={link.src} className="flex flex-col md:flex-row md:gap-x-4 items-center 
+            mt-8 hover:bg-gray-400 rounded-md p-2" key={link.i}>
+              <img src={link.logo} alt="" className={`cursor-pointer duration-500 w-8 h-8`} />
+              <span className={`text-white origin-left font-medium text-xs md:text-sm
+          duration-300 ${!open && "scale-0"}`}>{link.title}</span>
+            </NavLink>
+          ))
         }
+      </aside>
     </>
 
   )

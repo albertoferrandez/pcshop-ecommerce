@@ -9,7 +9,6 @@ export const getAllProducts = async () => {
         console.log(error)
     }
     if (data) {
-        console.log(data)
         return data
     }
 }

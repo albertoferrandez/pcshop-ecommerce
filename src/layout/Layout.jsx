@@ -1,14 +1,14 @@
 import { Outlet } from 'react-router-dom'
 import Header from '../componentes/Header'
-import NavBar from '../componentes/NavBar'
 import Footer from '../componentes/Footer'
+import NavBar from '../componentes/NavBar'
 
 const Layout = () => {
     return (
         <>
             <Header />
-            <NavBar />
-            <main>
+            <main className='flex'>
+                <NavBar/>
                 <Outlet/>
             </main>
             <Footer/>
