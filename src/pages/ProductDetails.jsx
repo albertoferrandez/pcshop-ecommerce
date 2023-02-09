@@ -12,7 +12,7 @@ const ProductDetails = () => {
   return (
 
     <section class="w-full mx-auto ">
-      <div className="w-[75%] mx-auto mt-7 grid grid-cols-1 md:grid-cols-2 p-7">
+      <div className="w-[75%] mx-auto mt-7 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-7">
         <div className="">
           <img class="h-full w-full max-w-full object-cover" src={location.state.imagen} alt="" />
         </div>
@@ -51,7 +51,7 @@ const ProductDetails = () => {
               <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
-              Add to cart
+              Añadir al carrito
             </button>
           </div>
         </div>

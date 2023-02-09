@@ -31,18 +31,17 @@ const NavBar = () => {
         <BsArrowLeftSquareFill className={`absolute cursor-pointer -right-3 
           top-9 w-7 rounded-md ${!open && "rotate-180"} fill-slate-400 w-6 h-6`} onClick={() => setOpen(!open)} />
         {
-          Links.map((link, i) => (
-            <NavLink to={link.src} className="flex flex-col md:flex-row md:gap-x-4 items-center 
-            mt-8 hover:bg-gray-400 rounded-md p-2" key={link.i}>
-              <img src={link.logo} alt="" className={`cursor-pointer duration-500 w-8 h-8`} />
-              <span className={`text-white origin-left font-medium text-xs md:text-sm
+          Links.map((link) => (
+            <NavLink key={link.title} to={link.src} className="flex flex-col  md:flex-row md:gap-x-4 items-center 
+            mt-8 hover:bg-neutral-600 rounded-md p-2" >
+              <img src={link.logo} alt={link.title} className={`cursor-pointer duration-500 w-8 h-8`} />
+              <span className={`text-white pt-2 md:pt-0 origin-left font-medium text-center text-xs md:text-sm
           duration-300 ${!open && "scale-0"}`}>{link.title}</span>
             </NavLink>
           ))
         }
       </aside>
     </>
-
   )
 }
 

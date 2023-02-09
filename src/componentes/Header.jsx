@@ -26,7 +26,7 @@ const Header = () => {
     return (
         <header className="w-screen flex justify-between items-center px-14 h-20 md:h-44 bg-neutral-800">
             <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">pcSHOP</h1>
-            <div>
+            <div className="relative">
                 <span className="text-white">{cant}</span>
                 <button onClick={() => setOpen(!isOpen)}>
                     <img src={cart} alt="cart" width={30} height={30}/>
